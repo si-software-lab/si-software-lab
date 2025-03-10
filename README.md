@@ -1,16 +1,13 @@
-## Hi there 👋
+# welcome 
+#### quality mesurement group  
+### si-software-lab  
+💬 cad integration | 📫 ems@qualitymeasurement.org
 
-<!--
-**si-software-lab/si-software-lab** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 
 
-Here are some ideas to get you started:
+<img width="717" alt="image" src="https://github.com/user-attachments/assets/3b135b2a-dbb5-4fb0-9cb0-5827b1943edf"/>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+##
+
+### building interoperability solutions at the edge of health it.
+
