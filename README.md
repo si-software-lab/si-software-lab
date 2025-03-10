@@ -1,5 +1,5 @@
 # welcome 
-<img width="300" alt="logo_no_text_2" src="https://github.com/user-attachments/assets/a231c440-3f06-4f1d-99ba-94eb4bfb0c0f" />
+<img width="40" alt="logo_no_text_2" src="https://github.com/user-attachments/assets/a231c440-3f06-4f1d-99ba-94eb4bfb0c0f" />
 
 #### quality mesurement group  
 ### si-software-lab  
