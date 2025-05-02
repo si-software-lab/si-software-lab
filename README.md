@@ -1,16 +1,27 @@
-## Hi there 👋
+## Welcome to  
+<img width="140" alt="logo_QualityMeasurementGroup3" src="https://github.com/user-attachments/assets/bc132e4b-a431-44b8-9894-4f31ed7aa4ce" />
 
-<!--
-**si-software-lab/si-software-lab** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+ 
+## Quality Measurement Group 
+#### Semantic Interoperability
 
-Here are some ideas to get you started:
+si-software-lab
+### 📫 info@qualitymeasurement.org
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+----
+
+📈 visual intelligence 
+📊 closed loop quality improvement & management integration 
+💬 cad integration 
+🏥 ai clinical systems architecture 
+☑️ compliance and interoperability integration 
+
+----
+### Developers Connecting Systems 
+#### Interoperability Solutions at the Edge of Health IT
+
+![github_developer_icon_toolbelt_solo](https://github.com/user-attachments/assets/78ee9927-c531-40fd-831f-242352ca657c)
+
+
+##
+
