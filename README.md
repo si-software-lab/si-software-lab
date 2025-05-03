@@ -14,7 +14,8 @@ si-software-lab
 📈 visual intelligence 
 📊 closed loop quality improvement & management integration 
 💬 cad integration 
-🏥 ai clinical systems architecture 
+🏥 ai clinical systems architecture
+🔘 non-conformance, process deviation, and anomaly detection
 ☑️ compliance and interoperability integration 
 
 ----
