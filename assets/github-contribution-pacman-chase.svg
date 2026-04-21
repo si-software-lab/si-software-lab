@@ -1,0 +1,1451 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="860" height="330" viewBox="0 0 860 330" role="img" aria-labelledby="title desc">
+  <title id="title">Productivity Pac-Man versus the Agile-Blocking Contribuconda</title>
+  <desc id="desc">A custom si-software-lab contribution board with randomized Pac-Man chase routes, normal-spaced pellets, red laser guides, snake escapes, and occasional catches.</desc>
+  <metadata>route-seed:1776625478041; caught-routes:4</metadata>
+
+  <defs>
+    <style>
+      .label { fill: #8b949e; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 13px; }
+      .headline { fill: #f0f6fc; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0; }
+      .subline { fill: #c9d1d9; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; letter-spacing: 0; }
+      .chip-text { fill: #f0f6fc; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 12px; }
+      .laser-guide { fill: none; stroke: #ff3b30; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: .82; filter: url(#laser-glow); }
+      .pellet { fill: #ffffff; }
+      .snake-body { fill: #26a641; stroke: #0d1117; stroke-width: 2; }
+      .snake-head { fill: #39d353; stroke: #0d1117; stroke-width: 2; }
+      .snake-eye { fill: #0d1117; }
+      .pac-body { fill: #ffd33d; stroke: #0d1117; stroke-width: 2.2; }
+      .pac-mouth { fill: #0d1117; }
+      .pac-eye { fill: #0d1117; }
+      .pac-headlamp { stroke: #ff3b30; stroke-width: 2; stroke-linecap: round; filter: url(#laser-glow); }
+      .catch-ring { fill: none; stroke: #ffd33d; stroke-width: 2; }
+      .catch-burst { fill: none; stroke: #f2cc60; stroke-width: 2.4; stroke-linecap: round; }
+    </style>
+
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="laser-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2" result="laser-blur" />
+      <feMerge>
+        <feMergeNode in="laser-blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="board-glow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1117" />
+      <stop offset="1" stop-color="#010409" />
+    </linearGradient>
+
+    <g id="c0"><rect width="10" height="10" rx="2" fill="#161b22" /></g>
+    <g id="c1"><rect width="10" height="10" rx="2" fill="#0e4429" /></g>
+    <g id="c2"><rect width="10" height="10" rx="2" fill="#006d32" /></g>
+    <g id="c3"><rect width="10" height="10" rx="2" fill="#26a641" /></g>
+    <g id="c4"><rect width="10" height="10" rx="2" fill="#39d353" /></g>
+
+    <clipPath id="playfield-clip">
+      <rect x="42" y="104" width="776" height="144" rx="10" />
+    </clipPath>
+
+    <path id="route-r01-path" d="M96 186 H218 V172 H292 V200 H415 V144 H507 V186 H594 V144 H696 H765" />
+    <path id="route-r02-path" d="M764 186 H669 V144 H568 V186 H452 V200 H390 V214 H272 V158 H166 V214 H72 H-70" />
+    <path id="route-r03-path" d="M96 144 H165 V200 H256 V158 H357 V214 H477 V186 H550 V144 H635 V172 H694" />
+    <path id="route-r04-path" d="M764 200 H667 V186 H526 V200 H423 V228 H318 V200 H196 V186 H72 V200 H-70" />
+    <path id="route-r05-path" d="M96 144 H157 V186 H212 V200 H278 V172 H337 V214 H421 V200 H485 V186 H533 V228 H597 V186 H662" />
+    <path id="route-r06-path" d="M764 228 H680 V172 H571 V228 H525 V172 H413 V158 H338 V172 H249 V144 H149 V158 H72 V214 H-70" />
+    <path id="route-r07-path" d="M96 214 H146 V186 H211 V228 H273 V200 H339 V214 H421 V172 H479 V228 H529 V200 H591 V214 H671 H713" />
+    <path id="route-r08-path" d="M764 214 H687 V172 H604 V200 H521 V172 H425 V228 H316 V186 H242 V172 H162 V186 H72 V200 H-70" />
+    <path id="route-r09-path" d="M96 200 H205 V186 H330 V158 H435 V144 H575 V186 H684 V172 H788 V144 H930" />
+    <path id="route-r10-path" d="M764 228 H697 V186 H583 V200 H492 V186 H428 V158 H322 V214 H238 V200 H152 V214 H72 V172 H-70" />
+  </defs>
+
+  <rect width="860" height="330" rx="18" fill="#0d1117" />
+  <rect x="18" y="18" width="824" height="294" rx="14" fill="url(#board-glow)" stroke="#30363d" />
+
+  <text class="headline" x="42" y="58">Productivity Pac-Man versus the Agile-Blocking Contribuconda</text>
+  <text class="subline" x="42" y="82">Pac-Man demos the path to PRD.</text>
+
+  <g>
+    <rect x="42" y="104" width="776" height="144" rx="10" fill="#010409" stroke="#30363d" />
+    <text class="label" x="61" y="128">Apr</text>
+    <text class="label" x="89" y="128">May</text>
+    <text class="label" x="145" y="128">Jun</text>
+    <text class="label" x="215" y="128">Jul</text>
+    <text class="label" x="271" y="128">Aug</text>
+    <text class="label" x="341" y="128">Sep</text>
+    <text class="label" x="397" y="128">Oct</text>
+    <text class="label" x="453" y="128">Nov</text>
+    <text class="label" x="523" y="128">Dec</text>
+    <text class="label" x="579" y="128">Jan</text>
+    <text class="label" x="635" y="128">Feb</text>
+    <text class="label" x="691" y="128">Mar</text>
+    <text class="label" x="761" y="128">Apr</text>
+
+    <g id="skunkworks-contribution-array">
+      <use href="#c0" xlink:href="#c0" x="61" y="141"><title>2025-04-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="75" y="141"><title>2025-04-27 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="89" y="141"><title>2025-05-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="103" y="141"><title>2025-05-11 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="117" y="141"><title>2025-05-18 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="131" y="141"><title>2025-05-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="145" y="141"><title>2025-06-01 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="159" y="141"><title>2025-06-08 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="141"><title>2025-06-15 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="141"><title>2025-06-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="141"><title>2025-06-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="215" y="141"><title>2025-07-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="229" y="141"><title>2025-07-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="141"><title>2025-07-20 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="257" y="141"><title>2025-07-27 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="271" y="141"><title>2025-08-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="141"><title>2025-08-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="299" y="141"><title>2025-08-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="313" y="141"><title>2025-08-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="141"><title>2025-08-31 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="341" y="141"><title>2025-09-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="355" y="141"><title>2025-09-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="369" y="141"><title>2025-09-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="383" y="141"><title>2025-09-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="141"><title>2025-10-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="411" y="141"><title>2025-10-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="425" y="141"><title>2025-10-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="439" y="141"><title>2025-10-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="453" y="141"><title>2025-11-02 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="467" y="141"><title>2025-11-09 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="481" y="141"><title>2025-11-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="141"><title>2025-11-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="509" y="141"><title>2025-11-30 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="523" y="141"><title>2025-12-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="537" y="141"><title>2025-12-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="551" y="141"><title>2025-12-21 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="565" y="141"><title>2025-12-28 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="141"><title>2026-01-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="593" y="141"><title>2026-01-11 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="607" y="141"><title>2026-01-18 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="621" y="141"><title>2026-01-25 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="635" y="141"><title>2026-02-01 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="649" y="141"><title>2026-02-08 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="663" y="141"><title>2026-02-15 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="677" y="141"><title>2026-02-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="691" y="141"><title>2026-03-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="705" y="141"><title>2026-03-08 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="719" y="141"><title>2026-03-15 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="733" y="141"><title>2026-03-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="747" y="141"><title>2026-03-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="761" y="141"><title>2026-04-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="775" y="141"><title>2026-04-12 level 0</title></use>
+      <use href="#c4" xlink:href="#c4" x="789" y="141"><title>2026-04-19 level 4</title></use>
+      <use href="#c0" xlink:href="#c0" x="61" y="155"><title>2025-04-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="75" y="155"><title>2025-04-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="89" y="155"><title>2025-05-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="103" y="155"><title>2025-05-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="117" y="155"><title>2025-05-19 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="131" y="155"><title>2025-05-26 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="145" y="155"><title>2025-06-02 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="159" y="155"><title>2025-06-09 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="155"><title>2025-06-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="155"><title>2025-06-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="155"><title>2025-06-30 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="215" y="155"><title>2025-07-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="229" y="155"><title>2025-07-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="155"><title>2025-07-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="257" y="155"><title>2025-07-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="271" y="155"><title>2025-08-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="155"><title>2025-08-11 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="299" y="155"><title>2025-08-18 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="313" y="155"><title>2025-08-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="155"><title>2025-09-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="341" y="155"><title>2025-09-08 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="355" y="155"><title>2025-09-15 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="369" y="155"><title>2025-09-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="383" y="155"><title>2025-09-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="155"><title>2025-10-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="411" y="155"><title>2025-10-13 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="425" y="155"><title>2025-10-20 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="439" y="155"><title>2025-10-27 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="453" y="155"><title>2025-11-03 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="467" y="155"><title>2025-11-10 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="481" y="155"><title>2025-11-17 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="155"><title>2025-11-24 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="509" y="155"><title>2025-12-01 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="523" y="155"><title>2025-12-08 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="537" y="155"><title>2025-12-15 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="551" y="155"><title>2025-12-22 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="565" y="155"><title>2025-12-29 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="155"><title>2026-01-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="593" y="155"><title>2026-01-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="607" y="155"><title>2026-01-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="621" y="155"><title>2026-01-26 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="635" y="155"><title>2026-02-02 level 2</title></use>
+      <use href="#c1" xlink:href="#c1" x="649" y="155"><title>2026-02-09 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="663" y="155"><title>2026-02-16 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="677" y="155"><title>2026-02-23 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="691" y="155"><title>2026-03-02 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="705" y="155"><title>2026-03-09 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="719" y="155"><title>2026-03-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="733" y="155"><title>2026-03-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="747" y="155"><title>2026-03-30 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="761" y="155"><title>2026-04-06 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="775" y="155"><title>2026-04-13 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="789" y="155"><title>2026-04-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="61" y="169"><title>2025-04-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="75" y="169"><title>2025-04-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="89" y="169"><title>2025-05-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="103" y="169"><title>2025-05-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="117" y="169"><title>2025-05-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="131" y="169"><title>2025-05-27 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="145" y="169"><title>2025-06-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="159" y="169"><title>2025-06-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="169"><title>2025-06-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="169"><title>2025-06-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="169"><title>2025-07-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="215" y="169"><title>2025-07-08 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="229" y="169"><title>2025-07-15 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="169"><title>2025-07-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="257" y="169"><title>2025-07-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="271" y="169"><title>2025-08-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="169"><title>2025-08-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="299" y="169"><title>2025-08-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="313" y="169"><title>2025-08-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="169"><title>2025-09-02 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="341" y="169"><title>2025-09-09 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="355" y="169"><title>2025-09-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="369" y="169"><title>2025-09-23 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="383" y="169"><title>2025-09-30 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="169"><title>2025-10-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="411" y="169"><title>2025-10-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="425" y="169"><title>2025-10-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="439" y="169"><title>2025-10-28 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="453" y="169"><title>2025-11-04 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="467" y="169"><title>2025-11-11 level 1</title></use>
+      <use href="#c2" xlink:href="#c2" x="481" y="169"><title>2025-11-18 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="169"><title>2025-11-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="509" y="169"><title>2025-12-02 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="523" y="169"><title>2025-12-09 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="537" y="169"><title>2025-12-16 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="551" y="169"><title>2025-12-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="565" y="169"><title>2025-12-30 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="169"><title>2026-01-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="593" y="169"><title>2026-01-13 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="607" y="169"><title>2026-01-20 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="621" y="169"><title>2026-01-27 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="635" y="169"><title>2026-02-03 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="649" y="169"><title>2026-02-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="663" y="169"><title>2026-02-17 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="677" y="169"><title>2026-02-24 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="691" y="169"><title>2026-03-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="705" y="169"><title>2026-03-10 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="719" y="169"><title>2026-03-17 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="733" y="169"><title>2026-03-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="747" y="169"><title>2026-03-31 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="761" y="169"><title>2026-04-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="775" y="169"><title>2026-04-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="61" y="183"><title>2025-04-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="75" y="183"><title>2025-04-30 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="89" y="183"><title>2025-05-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="103" y="183"><title>2025-05-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="117" y="183"><title>2025-05-21 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="131" y="183"><title>2025-05-28 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="145" y="183"><title>2025-06-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="159" y="183"><title>2025-06-11 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="183"><title>2025-06-18 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="183"><title>2025-06-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="183"><title>2025-07-02 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="215" y="183"><title>2025-07-09 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="229" y="183"><title>2025-07-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="183"><title>2025-07-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="257" y="183"><title>2025-07-30 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="271" y="183"><title>2025-08-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="183"><title>2025-08-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="299" y="183"><title>2025-08-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="313" y="183"><title>2025-08-27 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="183"><title>2025-09-03 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="341" y="183"><title>2025-09-10 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="355" y="183"><title>2025-09-17 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="369" y="183"><title>2025-09-24 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="383" y="183"><title>2025-10-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="183"><title>2025-10-08 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="411" y="183"><title>2025-10-15 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="425" y="183"><title>2025-10-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="439" y="183"><title>2025-10-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="453" y="183"><title>2025-11-05 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="467" y="183"><title>2025-11-12 level 2</title></use>
+      <use href="#c2" xlink:href="#c2" x="481" y="183"><title>2025-11-19 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="183"><title>2025-11-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="509" y="183"><title>2025-12-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="523" y="183"><title>2025-12-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="537" y="183"><title>2025-12-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="551" y="183"><title>2025-12-24 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="565" y="183"><title>2025-12-31 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="183"><title>2026-01-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="593" y="183"><title>2026-01-14 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="607" y="183"><title>2026-01-21 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="621" y="183"><title>2026-01-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="635" y="183"><title>2026-02-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="649" y="183"><title>2026-02-11 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="663" y="183"><title>2026-02-18 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="677" y="183"><title>2026-02-25 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="691" y="183"><title>2026-03-04 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="705" y="183"><title>2026-03-11 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="719" y="183"><title>2026-03-18 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="733" y="183"><title>2026-03-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="747" y="183"><title>2026-04-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="761" y="183"><title>2026-04-08 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="775" y="183"><title>2026-04-15 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="61" y="197"><title>2025-04-24 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="75" y="197"><title>2025-05-01 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="89" y="197"><title>2025-05-08 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="103" y="197"><title>2025-05-15 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="117" y="197"><title>2025-05-22 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="131" y="197"><title>2025-05-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="145" y="197"><title>2025-06-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="159" y="197"><title>2025-06-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="197"><title>2025-06-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="197"><title>2025-06-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="197"><title>2025-07-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="215" y="197"><title>2025-07-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="229" y="197"><title>2025-07-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="197"><title>2025-07-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="257" y="197"><title>2025-07-31 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="271" y="197"><title>2025-08-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="197"><title>2025-08-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="299" y="197"><title>2025-08-21 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="313" y="197"><title>2025-08-28 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="197"><title>2025-09-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="341" y="197"><title>2025-09-11 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="355" y="197"><title>2025-09-18 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="369" y="197"><title>2025-09-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="383" y="197"><title>2025-10-02 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="197"><title>2025-10-09 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="411" y="197"><title>2025-10-16 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="425" y="197"><title>2025-10-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="439" y="197"><title>2025-10-30 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="453" y="197"><title>2025-11-06 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="467" y="197"><title>2025-11-13 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="481" y="197"><title>2025-11-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="197"><title>2025-11-27 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="509" y="197"><title>2025-12-04 level 1</title></use>
+      <use href="#c1" xlink:href="#c1" x="523" y="197"><title>2025-12-11 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="537" y="197"><title>2025-12-18 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="551" y="197"><title>2025-12-25 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="565" y="197"><title>2026-01-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="197"><title>2026-01-08 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="593" y="197"><title>2026-01-15 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="607" y="197"><title>2026-01-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="621" y="197"><title>2026-01-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="635" y="197"><title>2026-02-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="649" y="197"><title>2026-02-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="663" y="197"><title>2026-02-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="677" y="197"><title>2026-02-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="691" y="197"><title>2026-03-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="705" y="197"><title>2026-03-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="719" y="197"><title>2026-03-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="733" y="197"><title>2026-03-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="747" y="197"><title>2026-04-02 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="761" y="197"><title>2026-04-09 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="775" y="197"><title>2026-04-16 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="61" y="211"><title>2025-04-25 level 0</title></use>
+      <use href="#c3" xlink:href="#c3" x="75" y="211"><title>2025-05-02 level 3</title></use>
+      <use href="#c0" xlink:href="#c0" x="89" y="211"><title>2025-05-09 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="103" y="211"><title>2025-05-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="117" y="211"><title>2025-05-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="131" y="211"><title>2025-05-30 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="145" y="211"><title>2025-06-06 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="159" y="211"><title>2025-06-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="211"><title>2025-06-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="211"><title>2025-06-27 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="211"><title>2025-07-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="215" y="211"><title>2025-07-11 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="229" y="211"><title>2025-07-18 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="211"><title>2025-07-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="257" y="211"><title>2025-08-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="271" y="211"><title>2025-08-08 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="211"><title>2025-08-15 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="299" y="211"><title>2025-08-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="313" y="211"><title>2025-08-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="211"><title>2025-09-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="341" y="211"><title>2025-09-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="355" y="211"><title>2025-09-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="369" y="211"><title>2025-09-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="383" y="211"><title>2025-10-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="211"><title>2025-10-10 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="411" y="211"><title>2025-10-17 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="425" y="211"><title>2025-10-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="439" y="211"><title>2025-10-31 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="453" y="211"><title>2025-11-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="467" y="211"><title>2025-11-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="481" y="211"><title>2025-11-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="211"><title>2025-11-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="509" y="211"><title>2025-12-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="523" y="211"><title>2025-12-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="537" y="211"><title>2025-12-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="551" y="211"><title>2025-12-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="565" y="211"><title>2026-01-02 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="211"><title>2026-01-09 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="593" y="211"><title>2026-01-16 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="607" y="211"><title>2026-01-23 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="621" y="211"><title>2026-01-30 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="635" y="211"><title>2026-02-06 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="649" y="211"><title>2026-02-13 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="663" y="211"><title>2026-02-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="677" y="211"><title>2026-02-27 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="691" y="211"><title>2026-03-06 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="705" y="211"><title>2026-03-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="719" y="211"><title>2026-03-20 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="733" y="211"><title>2026-03-27 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="747" y="211"><title>2026-04-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="761" y="211"><title>2026-04-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="775" y="211"><title>2026-04-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="61" y="225"><title>2025-04-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="75" y="225"><title>2025-05-03 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="89" y="225"><title>2025-05-10 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="103" y="225"><title>2025-05-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="117" y="225"><title>2025-05-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="131" y="225"><title>2025-05-31 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="145" y="225"><title>2025-06-07 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="159" y="225"><title>2025-06-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="173" y="225"><title>2025-06-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="187" y="225"><title>2025-06-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="201" y="225"><title>2025-07-05 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="215" y="225"><title>2025-07-12 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="229" y="225"><title>2025-07-19 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="243" y="225"><title>2025-07-26 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="257" y="225"><title>2025-08-02 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="271" y="225"><title>2025-08-09 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="285" y="225"><title>2025-08-16 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="299" y="225"><title>2025-08-23 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="313" y="225"><title>2025-08-30 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="327" y="225"><title>2025-09-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="341" y="225"><title>2025-09-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="355" y="225"><title>2025-09-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="369" y="225"><title>2025-09-27 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="383" y="225"><title>2025-10-04 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="397" y="225"><title>2025-10-11 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="411" y="225"><title>2025-10-18 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="425" y="225"><title>2025-10-25 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="439" y="225"><title>2025-11-01 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="453" y="225"><title>2025-11-08 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="467" y="225"><title>2025-11-15 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="481" y="225"><title>2025-11-22 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="495" y="225"><title>2025-11-29 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="509" y="225"><title>2025-12-06 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="523" y="225"><title>2025-12-13 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="537" y="225"><title>2025-12-20 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="551" y="225"><title>2025-12-27 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="565" y="225"><title>2026-01-03 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="579" y="225"><title>2026-01-10 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="593" y="225"><title>2026-01-17 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="607" y="225"><title>2026-01-24 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="621" y="225"><title>2026-01-31 level 0</title></use>
+      <use href="#c2" xlink:href="#c2" x="635" y="225"><title>2026-02-07 level 2</title></use>
+      <use href="#c0" xlink:href="#c0" x="649" y="225"><title>2026-02-14 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="663" y="225"><title>2026-02-21 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="677" y="225"><title>2026-02-28 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="691" y="225"><title>2026-03-07 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="705" y="225"><title>2026-03-14 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="719" y="225"><title>2026-03-21 level 0</title></use>
+      <use href="#c0" xlink:href="#c0" x="733" y="225"><title>2026-03-28 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="747" y="225"><title>2026-04-04 level 1</title></use>
+      <use href="#c0" xlink:href="#c0" x="761" y="225"><title>2026-04-11 level 0</title></use>
+      <use href="#c1" xlink:href="#c1" x="775" y="225"><title>2026-04-18 level 1</title></use>
+    </g>
+
+    <g id="route-r01" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.094;1" />
+      <use href="#route-r01-path" xlink:href="#route-r01-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="96" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.008;1" /></circle>
+        <circle class="pellet" cx="110" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.009;1" /></circle>
+        <circle class="pellet" cx="123" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.01;1" /></circle>
+        <circle class="pellet" cx="137" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.011;1" /></circle>
+        <circle class="pellet" cx="150" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.012;1" /></circle>
+        <circle class="pellet" cx="164" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.013;1" /></circle>
+        <circle class="pellet" cx="177" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.014;1" /></circle>
+        <circle class="pellet" cx="191" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.015;1" /></circle>
+        <circle class="pellet" cx="204" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.017;1" /></circle>
+        <circle class="pellet" cx="218" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.018;1" /></circle>
+        <circle class="pellet" cx="218" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.02;1" /></circle>
+        <circle class="pellet" cx="233" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.021;1" /></circle>
+        <circle class="pellet" cx="248" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.023;1" /></circle>
+        <circle class="pellet" cx="262" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.025;1" /></circle>
+        <circle class="pellet" cx="277" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.026;1" /></circle>
+        <circle class="pellet" cx="292" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.028;1" /></circle>
+        <circle class="pellet" cx="292" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.03;1" /></circle>
+        <circle class="pellet" cx="292" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.031;1" /></circle>
+        <circle class="pellet" cx="306" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.033;1" /></circle>
+        <circle class="pellet" cx="319" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.034;1" /></circle>
+        <circle class="pellet" cx="333" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.036;1" /></circle>
+        <circle class="pellet" cx="347" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.037;1" /></circle>
+        <circle class="pellet" cx="360" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.038;1" /></circle>
+        <circle class="pellet" cx="374" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.038;1" /></circle>
+        <circle class="pellet" cx="388" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.039;1" /></circle>
+        <circle class="pellet" cx="401" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.04;1" /></circle>
+        <circle class="pellet" cx="415" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.041;1" /></circle>
+        <circle class="pellet" cx="415" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.042;1" /></circle>
+        <circle class="pellet" cx="415" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.043;1" /></circle>
+        <circle class="pellet" cx="415" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.043;1" /></circle>
+        <circle class="pellet" cx="415" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.044;1" /></circle>
+        <circle class="pellet" cx="428" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.045;1" /></circle>
+        <circle class="pellet" cx="441" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.046;1" /></circle>
+        <circle class="pellet" cx="454" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.047;1" /></circle>
+        <circle class="pellet" cx="468" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.047;1" /></circle>
+        <circle class="pellet" cx="481" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.048;1" /></circle>
+        <circle class="pellet" cx="494" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.049;1" /></circle>
+        <circle class="pellet" cx="507" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.05;1" /></circle>
+        <circle class="pellet" cx="507" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.051;1" /></circle>
+        <circle class="pellet" cx="507" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.052;1" /></circle>
+        <circle class="pellet" cx="507" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.052;1" /></circle>
+        <circle class="pellet" cx="522" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.055;1" /></circle>
+        <circle class="pellet" cx="536" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.058;1" /></circle>
+        <circle class="pellet" cx="551" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.061;1" /></circle>
+        <circle class="pellet" cx="565" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.064;1" /></circle>
+        <circle class="pellet" cx="580" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.067;1" /></circle>
+        <circle class="pellet" cx="594" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.068;1" /></circle>
+        <circle class="pellet" cx="594" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.069;1" /></circle>
+        <circle class="pellet" cx="594" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.071;1" /></circle>
+        <circle class="pellet" cx="594" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.072;1" /></circle>
+        <circle class="pellet" cx="609" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.073;1" /></circle>
+        <circle class="pellet" cx="623" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.074;1" /></circle>
+        <circle class="pellet" cx="638" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.075;1" /></circle>
+        <circle class="pellet" cx="652" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.076;1" /></circle>
+        <circle class="pellet" cx="667" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.077;1" /></circle>
+        <circle class="pellet" cx="681" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.078;1" /></circle>
+        <circle class="pellet" cx="696" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.079;1" /></circle>
+        <circle class="pellet" cx="709" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.08;1" /></circle>
+        <circle class="pellet" cx="722" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.081;1" /></circle>
+        <circle class="pellet" cx="735" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.081;1" /></circle>
+        <circle class="pellet" cx="748" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.082;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g class="catch-spark" transform="translate(765 144)" opacity="0">
+          <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.078;0.094;1" />
+          <circle class="catch-ring" r="12">
+            <animate attributeName="r" dur="48s" repeatCount="indefinite" values="12;12;31;31" keyTimes="0;0.078;0.094;1" />
+          </circle>
+          <path class="catch-burst" d="M-24 0 H-11 M11 0 H24 M0 -24 V-11 M0 11 V24" />
+        </g>
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.125;0.282;0.31;0.434;0.607;0.68;0.823;0.94;0.94;0.94" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.135;0.292;0.32;0.444;0.617;0.69;0.833;0.95;0.95;0.95" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.145;0.302;0.33;0.454;0.627;0.7;0.843;0.96;0.96;0.96" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.155;0.312;0.34;0.464;0.637;0.71;0.853;0.97;0.97;0.97" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.165;0.322;0.35;0.474;0.647;0.72;0.863;0.98;0.98;0.98" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.175;0.332;0.36;0.484;0.657;0.73;0.873;0.99;0.99;0.99" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.185;0.342;0.37;0.494;0.667;0.74;0.883;1;1;1" keyTimes="0;0.013;0.025;0.037;0.045;0.06;0.07;0.08;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0.091;0.217;0.332;0.567;0.652;0.724;0.82;1;1;1" keyTimes="0;0.006;0.012;0.024;0.035;0.047;0.051;0.065;0.072;0.082;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0.091;0.217;0.332;0.567;0.652;0.724;0.82;1;1;1" keyTimes="0;0.006;0.012;0.024;0.035;0.047;0.051;0.065;0.072;0.082;0.094;1"><mpath href="#route-r01-path" xlink:href="#route-r01-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r02" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.1;0.194;1" />
+      <use href="#route-r02-path" xlink:href="#route-r02-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="764" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.102;1" /></circle>
+        <circle class="pellet" cx="750" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.108;1" /></circle>
+        <circle class="pellet" cx="737" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.109;1" /></circle>
+        <circle class="pellet" cx="723" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.111;1" /></circle>
+        <circle class="pellet" cx="710" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.112;1" /></circle>
+        <circle class="pellet" cx="696" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.113;1" /></circle>
+        <circle class="pellet" cx="683" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.115;1" /></circle>
+        <circle class="pellet" cx="669" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.116;1" /></circle>
+        <circle class="pellet" cx="669" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.117;1" /></circle>
+        <circle class="pellet" cx="669" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.119;1" /></circle>
+        <circle class="pellet" cx="669" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.12;1" /></circle>
+        <circle class="pellet" cx="655" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.122;1" /></circle>
+        <circle class="pellet" cx="640" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.123;1" /></circle>
+        <circle class="pellet" cx="626" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.124;1" /></circle>
+        <circle class="pellet" cx="611" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.125;1" /></circle>
+        <circle class="pellet" cx="597" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.127;1" /></circle>
+        <circle class="pellet" cx="582" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.128;1" /></circle>
+        <circle class="pellet" cx="568" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.129;1" /></circle>
+        <circle class="pellet" cx="568" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.132;1" /></circle>
+        <circle class="pellet" cx="568" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.135;1" /></circle>
+        <circle class="pellet" cx="568" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.139;1" /></circle>
+        <circle class="pellet" cx="554" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.14;1" /></circle>
+        <circle class="pellet" cx="539" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.141;1" /></circle>
+        <circle class="pellet" cx="525" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.141;1" /></circle>
+        <circle class="pellet" cx="510" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.142;1" /></circle>
+        <circle class="pellet" cx="496" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.143;1" /></circle>
+        <circle class="pellet" cx="481" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.143;1" /></circle>
+        <circle class="pellet" cx="467" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.144;1" /></circle>
+        <circle class="pellet" cx="452" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.145;1" /></circle>
+        <circle class="pellet" cx="452" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.145;1" /></circle>
+        <circle class="pellet" cx="437" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.146;1" /></circle>
+        <circle class="pellet" cx="421" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.147;1" /></circle>
+        <circle class="pellet" cx="406" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.148;1" /></circle>
+        <circle class="pellet" cx="390" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.148;1" /></circle>
+        <circle class="pellet" cx="390" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.149;1" /></circle>
+        <circle class="pellet" cx="375" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.151;1" /></circle>
+        <circle class="pellet" cx="361" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.154;1" /></circle>
+        <circle class="pellet" cx="346" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.157;1" /></circle>
+        <circle class="pellet" cx="331" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.16;1" /></circle>
+        <circle class="pellet" cx="316" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.163;1" /></circle>
+        <circle class="pellet" cx="302" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.166;1" /></circle>
+        <circle class="pellet" cx="287" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.168;1" /></circle>
+        <circle class="pellet" cx="272" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.17;1" /></circle>
+        <circle class="pellet" cx="272" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.171;1" /></circle>
+        <circle class="pellet" cx="272" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.172;1" /></circle>
+        <circle class="pellet" cx="272" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.173;1" /></circle>
+        <circle class="pellet" cx="272" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.174;1" /></circle>
+        <circle class="pellet" cx="259" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.175;1" /></circle>
+        <circle class="pellet" cx="246" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.176;1" /></circle>
+        <circle class="pellet" cx="232" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.177;1" /></circle>
+        <circle class="pellet" cx="219" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.179;1" /></circle>
+        <circle class="pellet" cx="206" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.18;1" /></circle>
+        <circle class="pellet" cx="193" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.182;1" /></circle>
+        <circle class="pellet" cx="179" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.183;1" /></circle>
+        <circle class="pellet" cx="166" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.185;1" /></circle>
+        <circle class="pellet" cx="166" cy="166" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.186;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.213;0.213;0.276;0.442;0.503;0.623;0.768;0.845;0.94;0.94;0.94" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.223;0.223;0.286;0.452;0.513;0.633;0.778;0.855;0.95;0.95;0.95" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.233;0.233;0.296;0.462;0.523;0.643;0.788;0.865;0.96;0.96;0.96" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.243;0.243;0.306;0.472;0.533;0.653;0.798;0.875;0.97;0.97;0.97" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.253;0.253;0.316;0.482;0.543;0.663;0.808;0.885;0.98;0.98;0.98" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.263;0.263;0.326;0.492;0.553;0.673;0.818;0.895;0.99;0.99;0.99" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.273;0.273;0.336;0.502;0.563;0.683;0.828;0.905;1;1;1" keyTimes="0;0.1;0.112;0.127;0.133;0.145;0.159;0.166;0.179;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.153;0.229;0.267;0.461;0.556;0.654;0.751;0.751;0.751" keyTimes="0;0.1;0.105;0.121;0.128;0.138;0.148;0.167;0.175;0.187;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.153;0.229;0.267;0.461;0.556;0.654;0.751;0.751;0.751" keyTimes="0;0.1;0.105;0.121;0.128;0.138;0.148;0.167;0.175;0.187;0.194;1"><mpath href="#route-r02-path" xlink:href="#route-r02-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r03" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.2;0.294;1" />
+      <use href="#route-r03-path" xlink:href="#route-r03-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="96" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.202;1" /></circle>
+        <circle class="pellet" cx="110" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.208;1" /></circle>
+        <circle class="pellet" cx="124" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.209;1" /></circle>
+        <circle class="pellet" cx="137" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.21;1" /></circle>
+        <circle class="pellet" cx="151" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.212;1" /></circle>
+        <circle class="pellet" cx="165" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.213;1" /></circle>
+        <circle class="pellet" cx="165" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.214;1" /></circle>
+        <circle class="pellet" cx="165" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.215;1" /></circle>
+        <circle class="pellet" cx="165" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.216;1" /></circle>
+        <circle class="pellet" cx="165" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.217;1" /></circle>
+        <circle class="pellet" cx="178" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.219;1" /></circle>
+        <circle class="pellet" cx="191" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.22;1" /></circle>
+        <circle class="pellet" cx="204" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.221;1" /></circle>
+        <circle class="pellet" cx="217" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.223;1" /></circle>
+        <circle class="pellet" cx="230" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.225;1" /></circle>
+        <circle class="pellet" cx="243" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.227;1" /></circle>
+        <circle class="pellet" cx="256" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.23;1" /></circle>
+        <circle class="pellet" cx="256" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.232;1" /></circle>
+        <circle class="pellet" cx="256" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.233;1" /></circle>
+        <circle class="pellet" cx="256" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.234;1" /></circle>
+        <circle class="pellet" cx="270" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.235;1" /></circle>
+        <circle class="pellet" cx="285" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.236;1" /></circle>
+        <circle class="pellet" cx="299" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.237;1" /></circle>
+        <circle class="pellet" cx="314" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.239;1" /></circle>
+        <circle class="pellet" cx="328" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.24;1" /></circle>
+        <circle class="pellet" cx="343" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.241;1" /></circle>
+        <circle class="pellet" cx="357" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.242;1" /></circle>
+        <circle class="pellet" cx="357" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.243;1" /></circle>
+        <circle class="pellet" cx="357" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.244;1" /></circle>
+        <circle class="pellet" cx="357" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.245;1" /></circle>
+        <circle class="pellet" cx="357" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.246;1" /></circle>
+        <circle class="pellet" cx="370" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.247;1" /></circle>
+        <circle class="pellet" cx="384" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.248;1" /></circle>
+        <circle class="pellet" cx="397" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.249;1" /></circle>
+        <circle class="pellet" cx="410" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.25;1" /></circle>
+        <circle class="pellet" cx="424" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.251;1" /></circle>
+        <circle class="pellet" cx="437" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.253;1" /></circle>
+        <circle class="pellet" cx="450" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.254;1" /></circle>
+        <circle class="pellet" cx="464" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.255;1" /></circle>
+        <circle class="pellet" cx="477" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.256;1" /></circle>
+        <circle class="pellet" cx="477" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.257;1" /></circle>
+        <circle class="pellet" cx="477" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.258;1" /></circle>
+        <circle class="pellet" cx="492" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.259;1" /></circle>
+        <circle class="pellet" cx="506" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.26;1" /></circle>
+        <circle class="pellet" cx="521" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.262;1" /></circle>
+        <circle class="pellet" cx="535" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.263;1" /></circle>
+        <circle class="pellet" cx="550" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.265;1" /></circle>
+        <circle class="pellet" cx="550" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.267;1" /></circle>
+        <circle class="pellet" cx="550" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.269;1" /></circle>
+        <circle class="pellet" cx="550" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.271;1" /></circle>
+        <circle class="pellet" cx="564" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.273;1" /></circle>
+        <circle class="pellet" cx="578" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.275;1" /></circle>
+        <circle class="pellet" cx="593" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.276;1" /></circle>
+        <circle class="pellet" cx="607" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.277;1" /></circle>
+        <circle class="pellet" cx="621" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.278;1" /></circle>
+        <circle class="pellet" cx="635" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.279;1" /></circle>
+        <circle class="pellet" cx="635" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.28;1" /></circle>
+        <circle class="pellet" cx="635" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.281;1" /></circle>
+        <circle class="pellet" cx="649" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.282;1" /></circle>
+        <circle class="pellet" cx="663" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.283;1" /></circle>
+        <circle class="pellet" cx="677" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.284;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g class="catch-spark" transform="translate(694 172)" opacity="0">
+          <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.28;0.294;1" />
+          <circle class="catch-ring" r="12">
+            <animate attributeName="r" dur="48s" repeatCount="indefinite" values="12;12;31;31" keyTimes="0;0.28;0.294;1" />
+          </circle>
+          <path class="catch-burst" d="M-24 0 H-11 M11 0 H24 M0 -24 V-11 M0 11 V24" />
+        </g>
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.085;0.085;0.236;0.468;0.553;0.734;0.94;0.94;0.94" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.095;0.095;0.246;0.478;0.563;0.744;0.95;0.95;0.95" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.105;0.105;0.256;0.488;0.573;0.754;0.96;0.96;0.96" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.115;0.115;0.266;0.498;0.583;0.764;0.97;0.97;0.97" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.125;0.125;0.276;0.508;0.593;0.774;0.98;0.98;0.98" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.135;0.135;0.286;0.518;0.603;0.784;0.99;0.99;0.99" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.145;0.145;0.296;0.528;0.613;0.794;1;1;1" keyTimes="0;0.2;0.215;0.229;0.251;0.267;0.281;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.197;0.269;0.444;0.718;0.824;1;1;1" keyTimes="0;0.2;0.205;0.219;0.231;0.242;0.26;0.273;0.284;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.197;0.269;0.444;0.718;0.824;1;1;1" keyTimes="0;0.2;0.205;0.219;0.231;0.242;0.26;0.273;0.284;0.294;1"><mpath href="#route-r03-path" xlink:href="#route-r03-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r04" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.3;0.394;1" />
+      <use href="#route-r04-path" xlink:href="#route-r04-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="764" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.302;1" /></circle>
+        <circle class="pellet" cx="750" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.311;1" /></circle>
+        <circle class="pellet" cx="736" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.314;1" /></circle>
+        <circle class="pellet" cx="722" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.317;1" /></circle>
+        <circle class="pellet" cx="709" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.32;1" /></circle>
+        <circle class="pellet" cx="695" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.323;1" /></circle>
+        <circle class="pellet" cx="681" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.325;1" /></circle>
+        <circle class="pellet" cx="667" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.327;1" /></circle>
+        <circle class="pellet" cx="667" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.329;1" /></circle>
+        <circle class="pellet" cx="653" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.331;1" /></circle>
+        <circle class="pellet" cx="639" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.333;1" /></circle>
+        <circle class="pellet" cx="625" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.335;1" /></circle>
+        <circle class="pellet" cx="611" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.337;1" /></circle>
+        <circle class="pellet" cx="597" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.339;1" /></circle>
+        <circle class="pellet" cx="582" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.34;1" /></circle>
+        <circle class="pellet" cx="568" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.341;1" /></circle>
+        <circle class="pellet" cx="554" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.341;1" /></circle>
+        <circle class="pellet" cx="540" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.342;1" /></circle>
+        <circle class="pellet" cx="526" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.342;1" /></circle>
+        <circle class="pellet" cx="526" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.343;1" /></circle>
+        <circle class="pellet" cx="511" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.343;1" /></circle>
+        <circle class="pellet" cx="497" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.344;1" /></circle>
+        <circle class="pellet" cx="482" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.345;1" /></circle>
+        <circle class="pellet" cx="467" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.345;1" /></circle>
+        <circle class="pellet" cx="452" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.346;1" /></circle>
+        <circle class="pellet" cx="438" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.346;1" /></circle>
+        <circle class="pellet" cx="423" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.35;1" /></circle>
+        <circle class="pellet" cx="423" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.353;1" /></circle>
+        <circle class="pellet" cx="423" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.357;1" /></circle>
+        <circle class="pellet" cx="410" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.36;1" /></circle>
+        <circle class="pellet" cx="397" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.363;1" /></circle>
+        <circle class="pellet" cx="384" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.366;1" /></circle>
+        <circle class="pellet" cx="371" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.367;1" /></circle>
+        <circle class="pellet" cx="357" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.368;1" /></circle>
+        <circle class="pellet" cx="344" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.368;1" /></circle>
+        <circle class="pellet" cx="331" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.369;1" /></circle>
+        <circle class="pellet" cx="318" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.37;1" /></circle>
+        <circle class="pellet" cx="318" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.37;1" /></circle>
+        <circle class="pellet" cx="318" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.371;1" /></circle>
+        <circle class="pellet" cx="304" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.372;1" /></circle>
+        <circle class="pellet" cx="291" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.372;1" /></circle>
+        <circle class="pellet" cx="277" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.373;1" /></circle>
+        <circle class="pellet" cx="264" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.373;1" /></circle>
+        <circle class="pellet" cx="250" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.375;1" /></circle>
+        <circle class="pellet" cx="237" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.377;1" /></circle>
+        <circle class="pellet" cx="223" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.379;1" /></circle>
+        <circle class="pellet" cx="210" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.381;1" /></circle>
+        <circle class="pellet" cx="196" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.382;1" /></circle>
+        <circle class="pellet" cx="196" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.384;1" /></circle>
+        <circle class="pellet" cx="179" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.387;1" /></circle>
+        <circle class="pellet" cx="161" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.389;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.213;0.213;0.296;0.433;0.621;0.688;0.847;0.94;0.94;0.94" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.223;0.223;0.306;0.443;0.631;0.698;0.857;0.95;0.95;0.95" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.233;0.233;0.316;0.453;0.641;0.708;0.867;0.96;0.96;0.96" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.243;0.243;0.326;0.463;0.651;0.718;0.877;0.97;0.97;0.97" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.253;0.253;0.336;0.473;0.661;0.728;0.887;0.98;0.98;0.98" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.263;0.263;0.346;0.483;0.671;0.738;0.897;0.99;0.99;0.99" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.273;0.273;0.356;0.493;0.681;0.748;0.907;1;1;1" keyTimes="0;0.3;0.318;0.331;0.34;0.355;0.374;0.386;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.077;0.198;0.374;0.462;0.622;0.761;0.761;0.761" keyTimes="0;0.3;0.306;0.323;0.339;0.345;0.365;0.372;0.39;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.077;0.198;0.374;0.462;0.622;0.761;0.761;0.761" keyTimes="0;0.3;0.306;0.323;0.339;0.345;0.365;0.372;0.39;0.394;1"><mpath href="#route-r04-path" xlink:href="#route-r04-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r05" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.4;0.494;1" />
+      <use href="#route-r05-path" xlink:href="#route-r05-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="96" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.402;1" /></circle>
+        <circle class="pellet" cx="111" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.409;1" /></circle>
+        <circle class="pellet" cx="127" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.41;1" /></circle>
+        <circle class="pellet" cx="142" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.411;1" /></circle>
+        <circle class="pellet" cx="157" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.412;1" /></circle>
+        <circle class="pellet" cx="157" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.413;1" /></circle>
+        <circle class="pellet" cx="157" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.413;1" /></circle>
+        <circle class="pellet" cx="157" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.414;1" /></circle>
+        <circle class="pellet" cx="171" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.415;1" /></circle>
+        <circle class="pellet" cx="185" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.416;1" /></circle>
+        <circle class="pellet" cx="198" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.417;1" /></circle>
+        <circle class="pellet" cx="212" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.421;1" /></circle>
+        <circle class="pellet" cx="212" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.428;1" /></circle>
+        <circle class="pellet" cx="225" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.43;1" /></circle>
+        <circle class="pellet" cx="238" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.431;1" /></circle>
+        <circle class="pellet" cx="252" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.431;1" /></circle>
+        <circle class="pellet" cx="265" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.431;1" /></circle>
+        <circle class="pellet" cx="278" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.432;1" /></circle>
+        <circle class="pellet" cx="278" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.432;1" /></circle>
+        <circle class="pellet" cx="278" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.433;1" /></circle>
+        <circle class="pellet" cx="293" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.433;1" /></circle>
+        <circle class="pellet" cx="308" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.434;1" /></circle>
+        <circle class="pellet" cx="322" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.434;1" /></circle>
+        <circle class="pellet" cx="337" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.435;1" /></circle>
+        <circle class="pellet" cx="337" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.436;1" /></circle>
+        <circle class="pellet" cx="337" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.437;1" /></circle>
+        <circle class="pellet" cx="337" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.438;1" /></circle>
+        <circle class="pellet" cx="351" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.439;1" /></circle>
+        <circle class="pellet" cx="365" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.44;1" /></circle>
+        <circle class="pellet" cx="379" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.441;1" /></circle>
+        <circle class="pellet" cx="393" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.442;1" /></circle>
+        <circle class="pellet" cx="407" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.443;1" /></circle>
+        <circle class="pellet" cx="421" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.445;1" /></circle>
+        <circle class="pellet" cx="421" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.447;1" /></circle>
+        <circle class="pellet" cx="434" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.449;1" /></circle>
+        <circle class="pellet" cx="447" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.45;1" /></circle>
+        <circle class="pellet" cx="459" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.452;1" /></circle>
+        <circle class="pellet" cx="472" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.454;1" /></circle>
+        <circle class="pellet" cx="485" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.455;1" /></circle>
+        <circle class="pellet" cx="485" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.457;1" /></circle>
+        <circle class="pellet" cx="501" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.459;1" /></circle>
+        <circle class="pellet" cx="517" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.469;1" /></circle>
+        <circle class="pellet" cx="533" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.47;1" /></circle>
+        <circle class="pellet" cx="533" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.471;1" /></circle>
+        <circle class="pellet" cx="533" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.471;1" /></circle>
+        <circle class="pellet" cx="533" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.472;1" /></circle>
+        <circle class="pellet" cx="546" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.473;1" /></circle>
+        <circle class="pellet" cx="559" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.474;1" /></circle>
+        <circle class="pellet" cx="571" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.475;1" /></circle>
+        <circle class="pellet" cx="584" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.475;1" /></circle>
+        <circle class="pellet" cx="597" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.476;1" /></circle>
+        <circle class="pellet" cx="597" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.477;1" /></circle>
+        <circle class="pellet" cx="597" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.478;1" /></circle>
+        <circle class="pellet" cx="597" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.479;1" /></circle>
+        <circle class="pellet" cx="613" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.48;1" /></circle>
+        <circle class="pellet" cx="630" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.482;1" /></circle>
+        <circle class="pellet" cx="646" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.483;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g class="catch-spark" transform="translate(662 186)" opacity="0">
+          <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.478;0.494;1" />
+          <circle class="catch-ring" r="12">
+            <animate attributeName="r" dur="48s" repeatCount="indefinite" values="12;12;31;31" keyTimes="0;0.478;0.494;1" />
+          </circle>
+          <path class="catch-burst" d="M-24 0 H-11 M11 0 H24 M0 -24 V-11 M0 11 V24" />
+        </g>
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.166;0.166;0.221;0.373;0.528;0.642;0.712;0.838;0.94;0.94;0.94" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.176;0.176;0.231;0.383;0.538;0.652;0.722;0.848;0.95;0.95;0.95" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.186;0.186;0.241;0.393;0.548;0.662;0.732;0.858;0.96;0.96;0.96" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.196;0.196;0.251;0.403;0.558;0.672;0.742;0.868;0.97;0.97;0.97" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.206;0.206;0.261;0.413;0.568;0.682;0.752;0.878;0.98;0.98;0.98" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.216;0.216;0.271;0.423;0.578;0.692;0.762;0.888;0.99;0.99;0.99" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.226;0.226;0.281;0.433;0.588;0.702;0.772;0.898;1;1;1" keyTimes="0;0.4;0.409;0.421;0.435;0.446;0.461;0.467;0.48;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.186;0.218;0.394;0.537;0.698;0.71;0.801;1;1;1" keyTimes="0;0.4;0.406;0.416;0.428;0.433;0.441;0.458;0.467;0.471;0.482;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.186;0.218;0.394;0.537;0.698;0.71;0.801;1;1;1" keyTimes="0;0.4;0.406;0.416;0.428;0.433;0.441;0.458;0.467;0.471;0.482;0.494;1"><mpath href="#route-r05-path" xlink:href="#route-r05-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r06" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.5;0.594;1" />
+      <use href="#route-r06-path" xlink:href="#route-r06-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="764" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.502;1" /></circle>
+        <circle class="pellet" cx="750" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.507;1" /></circle>
+        <circle class="pellet" cx="736" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.508;1" /></circle>
+        <circle class="pellet" cx="722" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.51;1" /></circle>
+        <circle class="pellet" cx="708" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.511;1" /></circle>
+        <circle class="pellet" cx="694" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.512;1" /></circle>
+        <circle class="pellet" cx="680" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.513;1" /></circle>
+        <circle class="pellet" cx="680" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.514;1" /></circle>
+        <circle class="pellet" cx="680" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.516;1" /></circle>
+        <circle class="pellet" cx="680" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.517;1" /></circle>
+        <circle class="pellet" cx="680" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.518;1" /></circle>
+        <circle class="pellet" cx="666" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.519;1" /></circle>
+        <circle class="pellet" cx="653" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.52;1" /></circle>
+        <circle class="pellet" cx="639" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.522;1" /></circle>
+        <circle class="pellet" cx="626" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.523;1" /></circle>
+        <circle class="pellet" cx="612" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.524;1" /></circle>
+        <circle class="pellet" cx="598" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.525;1" /></circle>
+        <circle class="pellet" cx="585" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.526;1" /></circle>
+        <circle class="pellet" cx="571" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.527;1" /></circle>
+        <circle class="pellet" cx="571" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.529;1" /></circle>
+        <circle class="pellet" cx="571" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.53;1" /></circle>
+        <circle class="pellet" cx="571" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.532;1" /></circle>
+        <circle class="pellet" cx="571" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.535;1" /></circle>
+        <circle class="pellet" cx="556" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.538;1" /></circle>
+        <circle class="pellet" cx="540" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.54;1" /></circle>
+        <circle class="pellet" cx="525" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.541;1" /></circle>
+        <circle class="pellet" cx="525" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.543;1" /></circle>
+        <circle class="pellet" cx="525" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.544;1" /></circle>
+        <circle class="pellet" cx="525" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.545;1" /></circle>
+        <circle class="pellet" cx="525" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.547;1" /></circle>
+        <circle class="pellet" cx="511" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.548;1" /></circle>
+        <circle class="pellet" cx="497" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.549;1" /></circle>
+        <circle class="pellet" cx="483" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.551;1" /></circle>
+        <circle class="pellet" cx="469" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.551;1" /></circle>
+        <circle class="pellet" cx="455" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.552;1" /></circle>
+        <circle class="pellet" cx="441" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.553;1" /></circle>
+        <circle class="pellet" cx="427" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.553;1" /></circle>
+        <circle class="pellet" cx="413" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.554;1" /></circle>
+        <circle class="pellet" cx="413" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.555;1" /></circle>
+        <circle class="pellet" cx="398" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.556;1" /></circle>
+        <circle class="pellet" cx="383" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.557;1" /></circle>
+        <circle class="pellet" cx="368" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.559;1" /></circle>
+        <circle class="pellet" cx="353" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.56;1" /></circle>
+        <circle class="pellet" cx="338" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.561;1" /></circle>
+        <circle class="pellet" cx="338" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.562;1" /></circle>
+        <circle class="pellet" cx="323" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.564;1" /></circle>
+        <circle class="pellet" cx="308" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.565;1" /></circle>
+        <circle class="pellet" cx="294" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.566;1" /></circle>
+        <circle class="pellet" cx="279" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.567;1" /></circle>
+        <circle class="pellet" cx="264" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.569;1" /></circle>
+        <circle class="pellet" cx="249" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.57;1" /></circle>
+        <circle class="pellet" cx="249" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.571;1" /></circle>
+        <circle class="pellet" cx="249" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.572;1" /></circle>
+        <circle class="pellet" cx="235" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.574;1" /></circle>
+        <circle class="pellet" cx="220" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.575;1" /></circle>
+        <circle class="pellet" cx="206" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.576;1" /></circle>
+        <circle class="pellet" cx="192" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.577;1" /></circle>
+        <circle class="pellet" cx="178" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.578;1" /></circle>
+        <circle class="pellet" cx="163" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.579;1" /></circle>
+        <circle class="pellet" cx="149" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.58;1" /></circle>
+        <circle class="pellet" cx="149" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.582;1" /></circle>
+        <circle class="pellet" cx="134" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.583;1" /></circle>
+        <circle class="pellet" cx="120" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.584;1" /></circle>
+        <circle class="pellet" cx="105" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.585;1" /></circle>
+        <circle class="pellet" cx="91" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.586;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.222;0.222;0.363;0.385;0.549;0.627;0.697;0.798;0.94;0.94;0.94" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.232;0.232;0.373;0.395;0.559;0.637;0.707;0.808;0.95;0.95;0.95" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.242;0.242;0.383;0.405;0.569;0.647;0.717;0.818;0.96;0.96;0.96" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.252;0.252;0.393;0.415;0.579;0.657;0.727;0.828;0.97;0.97;0.97" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.262;0.262;0.403;0.425;0.589;0.667;0.737;0.838;0.98;0.98;0.98" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.272;0.272;0.413;0.435;0.599;0.677;0.747;0.848;0.99;0.99;0.99" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.282;0.282;0.423;0.445;0.609;0.687;0.757;0.858;1;1;1" keyTimes="0;0.5;0.511;0.529;0.539;0.552;0.561;0.574;0.588;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.121;0.255;0.283;0.402;0.459;0.623;0.685;0.828;0.828;0.828" keyTimes="0;0.5;0.504;0.516;0.529;0.537;0.55;0.552;0.568;0.574;0.586;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.121;0.255;0.283;0.402;0.459;0.623;0.685;0.828;0.828;0.828" keyTimes="0;0.5;0.504;0.516;0.529;0.537;0.55;0.552;0.568;0.574;0.586;0.594;1"><mpath href="#route-r06-path" xlink:href="#route-r06-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r07" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.6;0.694;1" />
+      <use href="#route-r07-path" xlink:href="#route-r07-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="96" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.602;1" /></circle>
+        <circle class="pellet" cx="109" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.608;1" /></circle>
+        <circle class="pellet" cx="121" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.609;1" /></circle>
+        <circle class="pellet" cx="134" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.61;1" /></circle>
+        <circle class="pellet" cx="146" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.611;1" /></circle>
+        <circle class="pellet" cx="146" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.613;1" /></circle>
+        <circle class="pellet" cx="146" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.614;1" /></circle>
+        <circle class="pellet" cx="159" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.615;1" /></circle>
+        <circle class="pellet" cx="172" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.616;1" /></circle>
+        <circle class="pellet" cx="185" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.617;1" /></circle>
+        <circle class="pellet" cx="198" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.618;1" /></circle>
+        <circle class="pellet" cx="211" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.619;1" /></circle>
+        <circle class="pellet" cx="211" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.62;1" /></circle>
+        <circle class="pellet" cx="211" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.621;1" /></circle>
+        <circle class="pellet" cx="211" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.621;1" /></circle>
+        <circle class="pellet" cx="227" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.622;1" /></circle>
+        <circle class="pellet" cx="242" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.623;1" /></circle>
+        <circle class="pellet" cx="258" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.624;1" /></circle>
+        <circle class="pellet" cx="273" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.624;1" /></circle>
+        <circle class="pellet" cx="273" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.625;1" /></circle>
+        <circle class="pellet" cx="273" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.626;1" /></circle>
+        <circle class="pellet" cx="286" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.627;1" /></circle>
+        <circle class="pellet" cx="299" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.628;1" /></circle>
+        <circle class="pellet" cx="313" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.629;1" /></circle>
+        <circle class="pellet" cx="326" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.63;1" /></circle>
+        <circle class="pellet" cx="339" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.631;1" /></circle>
+        <circle class="pellet" cx="339" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.632;1" /></circle>
+        <circle class="pellet" cx="353" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.633;1" /></circle>
+        <circle class="pellet" cx="366" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.635;1" /></circle>
+        <circle class="pellet" cx="380" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.636;1" /></circle>
+        <circle class="pellet" cx="394" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.637;1" /></circle>
+        <circle class="pellet" cx="407" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.638;1" /></circle>
+        <circle class="pellet" cx="421" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.639;1" /></circle>
+        <circle class="pellet" cx="421" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.641;1" /></circle>
+        <circle class="pellet" cx="421" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.642;1" /></circle>
+        <circle class="pellet" cx="421" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.644;1" /></circle>
+        <circle class="pellet" cx="436" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.645;1" /></circle>
+        <circle class="pellet" cx="450" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.647;1" /></circle>
+        <circle class="pellet" cx="465" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.648;1" /></circle>
+        <circle class="pellet" cx="479" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.65;1" /></circle>
+        <circle class="pellet" cx="479" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.653;1" /></circle>
+        <circle class="pellet" cx="479" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.658;1" /></circle>
+        <circle class="pellet" cx="479" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.663;1" /></circle>
+        <circle class="pellet" cx="479" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.667;1" /></circle>
+        <circle class="pellet" cx="492" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.668;1" /></circle>
+        <circle class="pellet" cx="504" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.669;1" /></circle>
+        <circle class="pellet" cx="517" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.67;1" /></circle>
+        <circle class="pellet" cx="529" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.671;1" /></circle>
+        <circle class="pellet" cx="529" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.672;1" /></circle>
+        <circle class="pellet" cx="529" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.673;1" /></circle>
+        <circle class="pellet" cx="545" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.674;1" /></circle>
+        <circle class="pellet" cx="560" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.675;1" /></circle>
+        <circle class="pellet" cx="576" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.676;1" /></circle>
+        <circle class="pellet" cx="591" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.677;1" /></circle>
+        <circle class="pellet" cx="591" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.678;1" /></circle>
+        <circle class="pellet" cx="604" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.679;1" /></circle>
+        <circle class="pellet" cx="618" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.679;1" /></circle>
+        <circle class="pellet" cx="631" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.68;1" /></circle>
+        <circle class="pellet" cx="644" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.681;1" /></circle>
+        <circle class="pellet" cx="658" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.682;1" /></circle>
+        <circle class="pellet" cx="671" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.683;1" /></circle>
+        <circle class="pellet" cx="683" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.683;1" /></circle>
+        <circle class="pellet" cx="696" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.684;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g class="catch-spark" transform="translate(713 214)" opacity="0">
+          <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.68;0.694;1" />
+          <circle class="catch-ring" r="12">
+            <animate attributeName="r" dur="48s" repeatCount="indefinite" values="12;12;31;31" keyTimes="0;0.68;0.694;1" />
+          </circle>
+          <path class="catch-burst" d="M-24 0 H-11 M11 0 H24 M0 -24 V-11 M0 11 V24" />
+        </g>
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.082;0.082;0.144;0.37;0.453;0.558;0.758;0.806;0.94;0.94;0.94" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.092;0.092;0.154;0.38;0.463;0.568;0.768;0.816;0.95;0.95;0.95" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.102;0.102;0.164;0.39;0.473;0.578;0.778;0.826;0.96;0.96;0.96" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.112;0.112;0.174;0.4;0.483;0.588;0.788;0.836;0.97;0.97;0.97" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.122;0.122;0.184;0.41;0.493;0.598;0.798;0.846;0.98;0.98;0.98" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.132;0.132;0.194;0.42;0.503;0.608;0.808;0.856;0.99;0.99;0.99" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.142;0.142;0.204;0.43;0.513;0.618;0.818;0.866;1;1;1" keyTimes="0;0.6;0.614;0.621;0.636;0.648;0.663;0.667;0.682;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.173;0.306;0.497;0.627;0.679;0.844;1;1;1" keyTimes="0;0.6;0.606;0.618;0.624;0.637;0.649;0.665;0.676;0.684;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.173;0.306;0.497;0.627;0.679;0.844;1;1;1" keyTimes="0;0.6;0.606;0.618;0.624;0.637;0.649;0.665;0.676;0.684;0.694;1"><mpath href="#route-r07-path" xlink:href="#route-r07-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r08" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.7;0.794;1" />
+      <use href="#route-r08-path" xlink:href="#route-r08-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="764" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.702;1" /></circle>
+        <circle class="pellet" cx="751" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.709;1" /></circle>
+        <circle class="pellet" cx="738" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.71;1" /></circle>
+        <circle class="pellet" cx="726" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.711;1" /></circle>
+        <circle class="pellet" cx="713" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.711;1" /></circle>
+        <circle class="pellet" cx="700" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.712;1" /></circle>
+        <circle class="pellet" cx="687" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.713;1" /></circle>
+        <circle class="pellet" cx="687" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.714;1" /></circle>
+        <circle class="pellet" cx="687" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.715;1" /></circle>
+        <circle class="pellet" cx="687" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.716;1" /></circle>
+        <circle class="pellet" cx="673" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.717;1" /></circle>
+        <circle class="pellet" cx="659" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.719;1" /></circle>
+        <circle class="pellet" cx="646" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.722;1" /></circle>
+        <circle class="pellet" cx="632" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.724;1" /></circle>
+        <circle class="pellet" cx="618" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.727;1" /></circle>
+        <circle class="pellet" cx="604" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.729;1" /></circle>
+        <circle class="pellet" cx="604" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.731;1" /></circle>
+        <circle class="pellet" cx="604" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.732;1" /></circle>
+        <circle class="pellet" cx="590" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.733;1" /></circle>
+        <circle class="pellet" cx="576" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.734;1" /></circle>
+        <circle class="pellet" cx="563" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.735;1" /></circle>
+        <circle class="pellet" cx="549" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.735;1" /></circle>
+        <circle class="pellet" cx="535" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.736;1" /></circle>
+        <circle class="pellet" cx="521" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.737;1" /></circle>
+        <circle class="pellet" cx="521" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.738;1" /></circle>
+        <circle class="pellet" cx="521" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.738;1" /></circle>
+        <circle class="pellet" cx="507" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.739;1" /></circle>
+        <circle class="pellet" cx="494" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.74;1" /></circle>
+        <circle class="pellet" cx="480" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.741;1" /></circle>
+        <circle class="pellet" cx="466" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.742;1" /></circle>
+        <circle class="pellet" cx="452" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.743;1" /></circle>
+        <circle class="pellet" cx="439" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.745;1" /></circle>
+        <circle class="pellet" cx="425" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.746;1" /></circle>
+        <circle class="pellet" cx="425" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.747;1" /></circle>
+        <circle class="pellet" cx="425" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.748;1" /></circle>
+        <circle class="pellet" cx="425" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.749;1" /></circle>
+        <circle class="pellet" cx="425" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.751;1" /></circle>
+        <circle class="pellet" cx="411" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.752;1" /></circle>
+        <circle class="pellet" cx="398" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.753;1" /></circle>
+        <circle class="pellet" cx="384" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.754;1" /></circle>
+        <circle class="pellet" cx="371" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.755;1" /></circle>
+        <circle class="pellet" cx="357" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.756;1" /></circle>
+        <circle class="pellet" cx="343" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.758;1" /></circle>
+        <circle class="pellet" cx="330" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.759;1" /></circle>
+        <circle class="pellet" cx="316" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.76;1" /></circle>
+        <circle class="pellet" cx="316" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.761;1" /></circle>
+        <circle class="pellet" cx="316" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.762;1" /></circle>
+        <circle class="pellet" cx="316" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.764;1" /></circle>
+        <circle class="pellet" cx="301" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.765;1" /></circle>
+        <circle class="pellet" cx="286" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.766;1" /></circle>
+        <circle class="pellet" cx="272" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.768;1" /></circle>
+        <circle class="pellet" cx="257" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.769;1" /></circle>
+        <circle class="pellet" cx="242" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.77;1" /></circle>
+        <circle class="pellet" cx="242" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.771;1" /></circle>
+        <circle class="pellet" cx="229" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.772;1" /></circle>
+        <circle class="pellet" cx="215" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.773;1" /></circle>
+        <circle class="pellet" cx="202" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.774;1" /></circle>
+        <circle class="pellet" cx="189" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.775;1" /></circle>
+        <circle class="pellet" cx="175" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.776;1" /></circle>
+        <circle class="pellet" cx="162" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.778;1" /></circle>
+        <circle class="pellet" cx="162" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.78;1" /></circle>
+        <circle class="pellet" cx="148" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.782;1" /></circle>
+        <circle class="pellet" cx="135" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.784;1" /></circle>
+        <circle class="pellet" cx="121" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.786;1" /></circle>
+        <circle class="pellet" cx="108" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.788;1" /></circle>
+        <circle class="pellet" cx="94" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.79;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.175;0.175;0.265;0.474;0.596;0.736;0.763;0.94;0.94;0.94" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.185;0.185;0.275;0.484;0.606;0.746;0.773;0.95;0.95;0.95" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.195;0.195;0.285;0.494;0.616;0.756;0.783;0.96;0.96;0.96" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.205;0.205;0.295;0.504;0.626;0.766;0.793;0.97;0.97;0.97" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.215;0.215;0.305;0.514;0.636;0.776;0.803;0.98;0.98;0.98" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.225;0.225;0.315;0.524;0.646;0.786;0.813;0.99;0.99;0.99" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.235;0.235;0.325;0.534;0.656;0.796;0.823;1;1;1" keyTimes="0;0.7;0.716;0.729;0.747;0.755;0.767;0.786;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.13;0.2;0.346;0.549;0.626;0.751;0.854;0.854;0.854" keyTimes="0;0.7;0.706;0.716;0.73;0.739;0.757;0.765;0.775;0.791;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.13;0.2;0.346;0.549;0.626;0.751;0.854;0.854;0.854" keyTimes="0;0.7;0.706;0.716;0.73;0.739;0.757;0.765;0.775;0.791;0.794;1"><mpath href="#route-r08-path" xlink:href="#route-r08-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r09" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.8;0.894;1" />
+      <use href="#route-r09-path" xlink:href="#route-r09-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="96" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.802;1" /></circle>
+        <circle class="pellet" cx="110" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.81;1" /></circle>
+        <circle class="pellet" cx="123" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.811;1" /></circle>
+        <circle class="pellet" cx="137" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.813;1" /></circle>
+        <circle class="pellet" cx="151" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.814;1" /></circle>
+        <circle class="pellet" cx="164" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.816;1" /></circle>
+        <circle class="pellet" cx="178" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.818;1" /></circle>
+        <circle class="pellet" cx="191" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.819;1" /></circle>
+        <circle class="pellet" cx="205" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.821;1" /></circle>
+        <circle class="pellet" cx="205" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.822;1" /></circle>
+        <circle class="pellet" cx="219" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.824;1" /></circle>
+        <circle class="pellet" cx="233" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.826;1" /></circle>
+        <circle class="pellet" cx="247" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.828;1" /></circle>
+        <circle class="pellet" cx="261" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.829;1" /></circle>
+        <circle class="pellet" cx="274" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.831;1" /></circle>
+        <circle class="pellet" cx="288" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.833;1" /></circle>
+        <circle class="pellet" cx="302" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.834;1" /></circle>
+        <circle class="pellet" cx="316" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.836;1" /></circle>
+        <circle class="pellet" cx="330" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.838;1" /></circle>
+        <circle class="pellet" cx="330" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.84;1" /></circle>
+        <circle class="pellet" cx="330" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.841;1" /></circle>
+        <circle class="pellet" cx="343" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.842;1" /></circle>
+        <circle class="pellet" cx="356" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.843;1" /></circle>
+        <circle class="pellet" cx="369" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.844;1" /></circle>
+        <circle class="pellet" cx="383" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.845;1" /></circle>
+        <circle class="pellet" cx="396" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.847;1" /></circle>
+        <circle class="pellet" cx="409" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.848;1" /></circle>
+        <circle class="pellet" cx="422" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.849;1" /></circle>
+        <circle class="pellet" cx="435" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.85;1" /></circle>
+        <circle class="pellet" cx="435" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.851;1" /></circle>
+        <circle class="pellet" cx="449" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.852;1" /></circle>
+        <circle class="pellet" cx="463" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.853;1" /></circle>
+        <circle class="pellet" cx="477" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.855;1" /></circle>
+        <circle class="pellet" cx="491" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.856;1" /></circle>
+        <circle class="pellet" cx="505" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.857;1" /></circle>
+        <circle class="pellet" cx="519" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.858;1" /></circle>
+        <circle class="pellet" cx="533" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.859;1" /></circle>
+        <circle class="pellet" cx="547" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.861;1" /></circle>
+        <circle class="pellet" cx="561" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.862;1" /></circle>
+        <circle class="pellet" cx="575" cy="144" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.863;1" /></circle>
+        <circle class="pellet" cx="575" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.865;1" /></circle>
+        <circle class="pellet" cx="575" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.866;1" /></circle>
+        <circle class="pellet" cx="575" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.867;1" /></circle>
+        <circle class="pellet" cx="589" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.868;1" /></circle>
+        <circle class="pellet" cx="602" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.869;1" /></circle>
+        <circle class="pellet" cx="616" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.869;1" /></circle>
+        <circle class="pellet" cx="630" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.87;1" /></circle>
+        <circle class="pellet" cx="643" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.871;1" /></circle>
+        <circle class="pellet" cx="657" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.872;1" /></circle>
+        <circle class="pellet" cx="670" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.872;1" /></circle>
+        <circle class="pellet" cx="684" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.873;1" /></circle>
+        <circle class="pellet" cx="684" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.874;1" /></circle>
+        <circle class="pellet" cx="698" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.875;1" /></circle>
+        <circle class="pellet" cx="713" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.876;1" /></circle>
+        <circle class="pellet" cx="727" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.88;1" /></circle>
+        <circle class="pellet" cx="742" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.883;1" /></circle>
+        <circle class="pellet" cx="756" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.886;1" /></circle>
+        <circle class="pellet" cx="770" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.889;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.168;0.168;0.223;0.445;0.493;0.571;0.684;0.854;0.94;0.94;0.94" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.178;0.178;0.233;0.455;0.503;0.581;0.694;0.864;0.95;0.95;0.95" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.188;0.188;0.243;0.465;0.513;0.591;0.704;0.874;0.96;0.96;0.96" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.198;0.198;0.253;0.475;0.523;0.601;0.714;0.884;0.97;0.97;0.97" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.208;0.208;0.263;0.485;0.533;0.611;0.724;0.894;0.98;0.98;0.98" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.218;0.218;0.273;0.495;0.543;0.621;0.734;0.904;0.99;0.99;0.99" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.228;0.228;0.283;0.505;0.553;0.631;0.744;0.914;1;1;1" keyTimes="0;0.8;0.81;0.823;0.841;0.844;0.857;0.874;0.886;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.115;0.279;0.456;0.591;0.744;0.827;0.827;0.827" keyTimes="0;0.8;0.807;0.82;0.839;0.854;0.865;0.874;0.892;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.115;0.279;0.456;0.591;0.744;0.827;0.827;0.827" keyTimes="0;0.8;0.807;0.82;0.839;0.854;0.865;0.874;0.892;0.894;1"><mpath href="#route-r09-path" xlink:href="#route-r09-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+
+    <g id="route-r10" opacity="0" clip-path="url(#playfield-clip)">
+      <animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.9;0.994;1" />
+      <use href="#route-r10-path" xlink:href="#route-r10-path" class="laser-guide" />
+
+      <g>
+        <circle class="pellet" cx="764" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.902;1" /></circle>
+        <circle class="pellet" cx="751" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.907;1" /></circle>
+        <circle class="pellet" cx="737" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.909;1" /></circle>
+        <circle class="pellet" cx="724" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.911;1" /></circle>
+        <circle class="pellet" cx="710" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.912;1" /></circle>
+        <circle class="pellet" cx="697" cy="228" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.914;1" /></circle>
+        <circle class="pellet" cx="697" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.916;1" /></circle>
+        <circle class="pellet" cx="697" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.917;1" /></circle>
+        <circle class="pellet" cx="697" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.919;1" /></circle>
+        <circle class="pellet" cx="683" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.921;1" /></circle>
+        <circle class="pellet" cx="669" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.921;1" /></circle>
+        <circle class="pellet" cx="654" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.922;1" /></circle>
+        <circle class="pellet" cx="640" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.922;1" /></circle>
+        <circle class="pellet" cx="626" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.923;1" /></circle>
+        <circle class="pellet" cx="612" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.924;1" /></circle>
+        <circle class="pellet" cx="597" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.924;1" /></circle>
+        <circle class="pellet" cx="583" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.925;1" /></circle>
+        <circle class="pellet" cx="583" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.925;1" /></circle>
+        <circle class="pellet" cx="570" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.926;1" /></circle>
+        <circle class="pellet" cx="557" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.927;1" /></circle>
+        <circle class="pellet" cx="544" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.932;1" /></circle>
+        <circle class="pellet" cx="531" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.939;1" /></circle>
+        <circle class="pellet" cx="518" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.943;1" /></circle>
+        <circle class="pellet" cx="505" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.944;1" /></circle>
+        <circle class="pellet" cx="492" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.945;1" /></circle>
+        <circle class="pellet" cx="492" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.945;1" /></circle>
+        <circle class="pellet" cx="479" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.946;1" /></circle>
+        <circle class="pellet" cx="466" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.947;1" /></circle>
+        <circle class="pellet" cx="454" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.948;1" /></circle>
+        <circle class="pellet" cx="441" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.949;1" /></circle>
+        <circle class="pellet" cx="428" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.95;1" /></circle>
+        <circle class="pellet" cx="428" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.951;1" /></circle>
+        <circle class="pellet" cx="428" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.952;1" /></circle>
+        <circle class="pellet" cx="415" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.953;1" /></circle>
+        <circle class="pellet" cx="402" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.954;1" /></circle>
+        <circle class="pellet" cx="388" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.955;1" /></circle>
+        <circle class="pellet" cx="375" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.957;1" /></circle>
+        <circle class="pellet" cx="362" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.958;1" /></circle>
+        <circle class="pellet" cx="349" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.959;1" /></circle>
+        <circle class="pellet" cx="335" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.961;1" /></circle>
+        <circle class="pellet" cx="322" cy="158" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.962;1" /></circle>
+        <circle class="pellet" cx="322" cy="172" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.963;1" /></circle>
+        <circle class="pellet" cx="322" cy="186" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.965;1" /></circle>
+        <circle class="pellet" cx="322" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.966;1" /></circle>
+        <circle class="pellet" cx="322" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.968;1" /></circle>
+        <circle class="pellet" cx="308" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.97;1" /></circle>
+        <circle class="pellet" cx="294" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.971;1" /></circle>
+        <circle class="pellet" cx="280" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.973;1" /></circle>
+        <circle class="pellet" cx="266" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.975;1" /></circle>
+        <circle class="pellet" cx="252" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.976;1" /></circle>
+        <circle class="pellet" cx="238" cy="214" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.978;1" /></circle>
+        <circle class="pellet" cx="238" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.98;1" /></circle>
+        <circle class="pellet" cx="225" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.982;1" /></circle>
+        <circle class="pellet" cx="213" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.984;1" /></circle>
+        <circle class="pellet" cx="200" cy="200" r="2.6"><animate attributeName="opacity" dur="48s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.987;1" /></circle>
+      </g>
+
+      <g filter="url(#soft-glow)">
+        <g><circle class="snake-body" r="5.6" opacity="0.42" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.215;0.215;0.348;0.513;0.641;0.769;0.94;0.94;0.94" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="5.9" opacity="0.52" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.225;0.225;0.358;0.523;0.651;0.779;0.95;0.95;0.95" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.2" opacity="0.62" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.235;0.235;0.368;0.533;0.661;0.789;0.96;0.96;0.96" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="6.6" opacity="0.72" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.245;0.245;0.378;0.543;0.671;0.799;0.97;0.97;0.97" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7" opacity="0.84" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.255;0.255;0.388;0.553;0.681;0.809;0.98;0.98;0.98" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion></g>
+          <g><circle class="snake-body" r="7.4" opacity="0.96" /><animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0.265;0.265;0.398;0.563;0.691;0.819;0.99;0.99;0.99" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion></g>
+          <g>
+            <circle class="snake-head" r="9.5" />
+            <circle class="snake-eye" cx="3" cy="-3" r="1.6" />
+            <circle class="snake-eye" cx="4" cy="3" r="1.6" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0.275;0.275;0.408;0.573;0.701;0.829;1;1;1" keyTimes="0;0.9;0.916;0.934;0.955;0.963;0.984;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion>
+          </g>
+        <g>
+            <circle class="pac-body" r="19" />
+            <path class="pac-mouth" d="M0 0 L23 -14 A26 26 0 0 1 23 14 Z">
+              <animate attributeName="d" dur=".32s" repeatCount="indefinite" values="M0 0 L23 -14 A26 26 0 0 1 23 14 Z;M0 0 L23 -4 A26 26 0 0 1 23 4 Z;M0 0 L23 -14 A26 26 0 0 1 23 14 Z" />
+            </path>
+            <line class="pac-headlamp" x1="17" y1="0" x2="43" y2="0" />
+            <animateMotion dur="48s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;0;0.112;0.25;0.279;0.419;0.532;0.653;0.712;0.712;0.712" keyTimes="0;0.9;0.904;0.919;0.925;0.941;0.951;0.962;0.978;0.989;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion>
+          </g>
+          <g>
+            <circle class="pac-eye" cx="3" cy="-9" r="2.2" />
+            <animateMotion dur="48s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;0;0.112;0.25;0.279;0.419;0.532;0.653;0.712;0.712;0.712" keyTimes="0;0.9;0.904;0.919;0.925;0.941;0.951;0.962;0.978;0.989;0.994;1"><mpath href="#route-r10-path" xlink:href="#route-r10-path" /></animateMotion>
+          </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(42 262)">
+    <rect width="126" height="34" rx="8" fill="#1f6feb" />
+    <text class="chip-text" x="16" y="22">interop</text>
+  </g>
+  <g transform="translate(184 262)">
+    <rect width="126" height="34" rx="8" fill="#238636" />
+    <text class="chip-text" x="16" y="22">quality</text>
+  </g>
+  <g transform="translate(326 262)">
+    <rect width="126" height="34" rx="8" fill="#6e40c9" />
+    <text class="chip-text" x="16" y="22">ai workers</text>
+  </g>
+  <g transform="translate(468 262)">
+    <rect width="126" height="34" rx="8" fill="#da3633" />
+    <text class="chip-text" x="16" y="22">compliance</text>
+  </g>
+  <g transform="translate(610 262)">
+    <rect width="126" height="34" rx="8" fill="#8957e5" />
+    <text class="chip-text" x="16" y="22">testing</text>
+  </g>
+</svg>

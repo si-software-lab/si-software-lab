@@ -1,0 +1,38 @@
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cubeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D9CDB; stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#4DD0E1; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0077B6; stop-opacity:1"/>
+    </linearGradient>
+
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="black" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(101, 50)">
+    <g>
+      <rect x="60" y="0" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+      <rect x="120" y="0" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+      <rect x="180" y="0" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+
+      <rect x="60" y="60" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+      <rect x="120" y="60" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+      <rect x="180" y="60" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+
+      <rect x="60" y="120" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+      <rect x="120" y="120" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+      <rect x="180" y="120" width="58" height="58" fill="url(#cubeGradient)" rx="5"/>
+    </g>
+
+    <path d="M60,140 L90,110 L120,130 L150,90 L180,120 L238,50"
+          stroke="#FFFFFF" stroke-width="18" fill="none" stroke-linecap="round" stroke-opacity="0.7"/>
+  </g>
+
+  <g transform="translate(162, 46)" font-family="Arial, sans-serif" letter-spacing="-2" fill="#FFFFFF" filter="url(#textShadow)">
+    <text x="0" y="30" font-size="30" font-weight="800">Quality</text>
+    <text x="0" y="56" font-size="30" font-weight="800">Measurement</text>
+    <text x="0" y="82" font-size="30" font-weight="800">Group</text>
+  </g>
+</svg>
