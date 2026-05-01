@@ -1,4 +1,33 @@
-<table width="100%">
+<table width="860" align="center">
+  <tr>
+    <td width="300" align="center" valign="top">
+      <h3>Developers Connecting Systems</h3>
+      <p align="center">
+        <img width="260" align="center" alt="Developer toolbelt icon" src="assets/github-developer-icon-toolbelt-solo.png" />
+      </p>
+    </td>
+    <td valign="top">
+      <p>David Balkcom, MPH, Principal Solutions Architect and a senior Health IT developer at Quality Measurement Group.</p>
+      <p>As an engineer, David translates subject-matter expertise into domain-specific harnessing for digital-AI workers to deliver deterministic responses for clinical and business analytics.</p>
+      <ul>
+        <li>Delivering data interoperability</li>
+        <li>Implementing digital workers</li>
+        <li>Tuning LLM inference models &amp; eval pipelines</li>
+        <li>Leveraging graph to automate data-analytic procedures</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img
+    src="assets/github-contribution-pacman-chase.svg"
+    alt="Animated Pac-Man chasing a GitHub contribution snake across green contribution blocks"
+    width="860"
+  />
+</p>
+
+<table width="860" align="center">
   <tr>
     <td width="300" align="center" valign="middle">
       <p align="center">
@@ -19,33 +48,6 @@
         <li>AI clinical systems architecture and bidirectional patient data exchange</li>
         <li>Non-conformance, process deviation, and anomaly detection</li>
         <li>Compliance-aware interoperability integration</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <img
-    src="assets/github-contribution-pacman-chase.svg"
-    alt="Animated Pac-Man chasing a GitHub contribution snake across green contribution blocks"
-    width="860"
-  />
-</p>
-
-<table width="100%">
-  <tr>
-    <td width="300" align="center" valign="top">
-      <h3>Developers Connecting Systems</h3>
-      <img width="260" alt="Developer toolbelt icon" src="assets/github-developer-icon-toolbelt-solo.png" />
-    </td>
-    <td valign="top">
-      <p>David Balkcom, MPH, Principal Solutions Architect and a senior Health IT developer at Quality Measurement Group.</p>
-      <p>As an engineer, David translates subject-matter expertise into domain-specific harnessing for digital AI workers to deliver deterministic responses for clinical and business analytics.</p>
-      <ul>
-        <li>Delivering data interoperability</li>
-        <li>Implementing digital workers</li>
-        <li>Tuning LLM inference models &amp; eval pipelines</li>
-        <li>Leveraging graph to automate data-analytic procedures</li>
       </ul>
     </td>
   </tr>
